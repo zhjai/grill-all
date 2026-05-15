@@ -35,7 +35,7 @@ Copy `skills/grill-all/SKILL.md` into your agent's skills directory, or paste it
 Install from the raw `SKILL.md` URL after this repo is published:
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/<owner>/grill-all/main/skills/grill-all/SKILL.md
+hermes skills install https://raw.githubusercontent.com/zhjai/grill-all/main/skills/grill-all/SKILL.md
 ```
 
 You can also copy `skills/grill-all` into your Hermes skills directory manually.
