@@ -1,44 +1,82 @@
 # grill-all
 
-A source-aware grilling skill for Codex, Claude Code, Hermes, and other vibe-coding agents.
+[![Skill](https://img.shields.io/badge/skill-grill--all-blue)](./skills/grill-all/SKILL.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-`grill-all` extends the ideas behind `grill-me` and `grill-with-docs`: before interrupting the human, decide whether the answer should come from the human, project docs, the codebase, or the web.
+A source-aware grilling skill for Claude Code, Codex, and other coding agents.
 
-## Why
+`grill-all` is inspired by [`grill-me`](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) and [`grill-with-docs`](https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md). It helps an agent stress-test a coding plan while deciding where each answer should come from: the human, project docs, the codebase, or the web.
 
-Vibe coding agents often fail in two opposite ways:
+## Why this exists
 
-- They ask humans too many questions that could be answered from docs or code.
-- They proceed autonomously through decisions that actually require human intent, taste, or risk acceptance.
+Coding agents often fail in two opposite ways:
+
+- They ask humans questions that docs or code could answer.
+- They proceed through decisions that actually require human intent, taste, priority, or risk acceptance.
 
 `grill-all` teaches the agent to route each unresolved question to the right source of truth.
 
-## Install
+## When to use it
+
+Use `grill-all` when you want an agent to challenge a plan, design, refactor, migration, or feature before or during implementation.
+
+It is especially useful when:
+
+- you are vibe coding but still want the agent to stop for real product decisions;
+- the project has docs, ADRs, OpenSpec files, issues, or code patterns the agent should inspect before asking you;
+- the task may depend on current external facts such as SDK docs, API behavior, framework changes, or ecosystem guidance;
+- you want `grill-me`-style questioning without being asked things the agent can verify itself.
+
+## How it behaves
+
+`grill-all` chooses its interaction mode from your prompt:
+
+- **Grill-heavy:** if you ask to be grilled, challenged, pressure-tested, or repeatedly confirmed.
+- **Autonomous:** if you ask for vibe coding, autonomous execution, or "don't ask unless blocked".
+- **Ask once:** if your prompt does not say, the agent asks whether you prefer more confirmation questions or more autonomous source-checking.
+
+Then it routes questions:
+
+- project facts → docs, specs, ADRs, issues, README, OpenSpec;
+- implementation facts → codebase, tests, types, call sites;
+- human decisions → one question at a time, with a recommended answer;
+- current external facts → official web docs and primary sources.
+
+## Installation
+
+This repo uses the common `skills/<skill-name>/SKILL.md` layout.
 
 ### Claude Code
 
-Copy the skill directory into a Claude Code skills directory:
+Install the skill into your user skills directory:
 
 ```bash
 mkdir -p ~/.claude/skills
 cp -R skills/grill-all ~/.claude/skills/grill-all
 ```
 
-Or copy it into a project-local skills directory if your Claude Code setup loads project skills.
+Or install it into a project-specific skills directory if your setup loads project skills.
 
-### Codex and other agents
+### Codex
 
-Copy `skills/grill-all/SKILL.md` into your agent's skills directory, or paste it as an instruction guide for the session.
-
-### Hermes Agent
-
-Install from the raw `SKILL.md` URL after this repo is published:
+Install the skill into your Codex skills directory:
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/zhjai/grill-all/main/skills/grill-all/SKILL.md
+mkdir -p ~/.agents/skills
+cp -R skills/grill-all ~/.agents/skills/grill-all
 ```
 
-You can also copy `skills/grill-all` into your Hermes skills directory manually.
+If your Codex setup does not auto-load skills, paste `skills/grill-all/SKILL.md` into the session or reference it from your project instructions.
+
+### Any coding agent
+
+Copy or reference:
+
+```text
+skills/grill-all/SKILL.md
+```
+
+The skill is plain Markdown with YAML frontmatter, so it can be adapted to most agent systems.
 
 ## Example prompts
 
@@ -58,11 +96,14 @@ Use docs and codebase first. Ask me only for product trade-offs.
 Challenge this plan using the codebase, OpenSpec, and current framework docs.
 ```
 
-## Default behavior
+More examples: [`examples/prompts.md`](./examples/prompts.md)
 
-If the user does not specify whether they want lots of questions or autonomous execution, `grill-all` asks one upfront preference question:
+## Prior art
 
-> Do you want me to grill you with confirmation questions, or should I proceed autonomously by checking docs/code/web and only ask when a human decision is required? I recommend autonomous unless this is a high-stakes design.
+- [`grill-me`](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md): relentless one-question-at-a-time plan interrogation.
+- [`grill-with-docs`](https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md): grilling against project language and documentation.
+
+`grill-all` extends those ideas with source routing across humans, docs, code, and web research.
 
 ## License
 
