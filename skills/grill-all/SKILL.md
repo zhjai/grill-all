@@ -84,6 +84,7 @@ When asking the human:
 3. Provide your recommended answer.
 4. Offer clear options when possible.
 5. Avoid asking for facts that can be found in docs, code, or web.
+6. After the human answers, record durable decisions as documentation so future agents do not ask again. Prefer the project's existing documentation location: design docs, ADRs, OpenSpec, `README.md`, `CONTEXT.md`, issue notes, or another repo-appropriate docs file. Treat the recorded answer as project documentation in future source routing. Do not record secrets, private credentials, or throwaway one-off preferences.
 
 Good pattern:
 
