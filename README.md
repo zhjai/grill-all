@@ -1,11 +1,11 @@
-# grill-all
+# grill-all: source-aware plan review for Claude Code, Codex, and AI coding agents
 
 [![Skill](https://img.shields.io/badge/skill-grill--all-blue)](./skills/grill-all/SKILL.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-A source-aware grilling skill for Claude Code, Codex, and other coding agents.
+`grill-all` is a source-aware plan-review skill that helps Claude Code, Codex, and other AI coding agents pressure-test implementation plans. It routes unresolved questions to the right source: project docs, the codebase, human intent, or current web documentation.
 
-`grill-all` is inspired by [`grill-me`](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) and [`grill-with-docs`](https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md). It helps an agent stress-test a coding plan while deciding where each answer should come from: the human, project docs, the codebase, or the web.
+Inspired by [`grill-me`](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) and [`grill-with-docs`](https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md), `grill-all` helps an agent stress-test a coding plan while deciding where each answer should come from: the human, project docs, the codebase, or the web.
 
 ## Why this exists
 
