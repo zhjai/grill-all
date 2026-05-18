@@ -1,0 +1,28 @@
+{
+  "name": "grill-all",
+  "version": "0.1.0",
+  "description": "Source-aware plan review for Codex and AI coding agents.",
+  "author": {
+    "name": "zhjai"
+  },
+  "repository": "https://github.com/zhjai/grill-all",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "ai-agents",
+    "plan-review",
+    "source-aware",
+    "coding-agents"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "grill-all",
+    "shortDescription": "Source-aware plan review for Codex.",
+    "longDescription": "Pressure-test implementation plans by routing unresolved questions to the right source: docs, codebase, human intent, or current web documentation.",
+    "developerName": "zhjai",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ]
+  }
+}

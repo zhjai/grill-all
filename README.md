@@ -44,7 +44,38 @@ Then it routes questions:
 
 ## Installation
 
-This repo uses the common `skills/<skill-name>/SKILL.md` layout.
+`grill-all` supports Codex, Claude Code, and generic coding agents:
+
+- Codex users can install it as a plugin or use the repo-scoped `.agents/skills/grill-all/SKILL.md` copy.
+- Claude Code users can copy the skill into their user skills directory.
+- Generic agents can read `skills/grill-all/SKILL.md` directly.
+
+### Codex
+
+#### As a Codex plugin
+
+Add this repo as a Codex plugin marketplace:
+
+```bash
+codex plugin marketplace add zhjai/grill-all
+```
+
+Then open Codex and install `grill-all` from the plugin marketplace.
+
+This repository includes the Codex plugin entrypoint at `.codex-plugin/plugin.json`, with the plugin skill copy in `.codex-plugin/skills/grill-all/SKILL.md`.
+
+#### As a repo-scoped Codex skill
+
+If you want to use `grill-all` inside another project without installing the plugin, copy the skill to that project's `.agents/skills` directory:
+
+```bash
+mkdir -p .agents/skills
+cp -R skills/grill-all .agents/skills/grill-all
+```
+
+Codex discovers repo-scoped skills from `.agents/skills` while working in that repository.
+
+This repo also includes `.agents/skills/grill-all/SKILL.md`, so Codex can discover `grill-all` automatically when run from this repository.
 
 ### Claude Code
 
@@ -57,16 +88,16 @@ cp -R skills/grill-all ~/.claude/skills/grill-all
 
 Or install it into a project-specific skills directory if your setup loads project skills.
 
-### Codex
+### Codex user skill
 
-Install the skill into your Codex skills directory:
+You can also install the skill into your Codex user skills directory:
 
 ```bash
 mkdir -p ~/.agents/skills
 cp -R skills/grill-all ~/.agents/skills/grill-all
 ```
 
-If your Codex setup does not auto-load skills, paste `skills/grill-all/SKILL.md` into the session or reference it from your project instructions.
+If your coding agent setup does not auto-load skills, paste `skills/grill-all/SKILL.md` into the session or reference it from your project instructions.
 
 ### Any coding agent
 
