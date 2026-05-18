@@ -1,0 +1,20 @@
+{
+  "name": "grill-all",
+  "version": "0.1.0",
+  "description": "Source-aware plan review for Claude Code, Codex, and AI coding agents.",
+  "author": {
+    "name": "zhjai"
+  },
+  "homepage": "https://github.com/zhjai/grill-all",
+  "repository": "https://github.com/zhjai/grill-all",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "codex",
+    "ai-agents",
+    "coding-agents",
+    "plan-review",
+    "source-aware"
+  ],
+  "skills": "./skills/"
+}

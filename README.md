@@ -79,6 +79,31 @@ This repo also includes `.agents/skills/grill-all/SKILL.md`, so Codex can discov
 
 ### Claude Code
 
+#### As a Claude Code plugin
+
+Add this repo as a Claude Code plugin marketplace:
+
+```bash
+claude plugin marketplace add zhjai/grill-all
+```
+
+Then install the plugin:
+
+```bash
+claude plugin install grill-all@grill-all-marketplace
+```
+
+Or inside Claude Code:
+
+```text
+/plugin marketplace add zhjai/grill-all
+/plugin install grill-all@grill-all-marketplace
+```
+
+This repository includes the Claude Code marketplace at `.claude-plugin/marketplace.json`, and the plugin itself at `plugins/grill-all/`.
+
+#### As a Claude Code user skill
+
 Install the skill into your user skills directory:
 
 ```bash
