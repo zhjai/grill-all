@@ -45,3 +45,16 @@ Research the current best practice for this library, but do not let web results 
 ```text
 We need to choose between redirect-based login and modal re-auth. Use grill-all: inspect existing UX patterns, then ask me one recommendation-backed question.
 ```
+
+
+## Review-only durable decision
+
+```text
+Use grill-all to review this plan. If I answer a product decision, suggest the doc note I should add, but do not edit files unless I explicitly ask you to.
+```
+
+## Private repository safety
+
+```text
+Use grill-all on this private codebase. Do not send source code or logs to web search; use web only for official public SDK docs and summarize any external evidence with URLs.
+```

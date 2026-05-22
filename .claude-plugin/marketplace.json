@@ -3,12 +3,15 @@
   "owner": {
     "name": "zhjai"
   },
+  "metadata": {
+    "description": "Source-aware plan-review skills for Claude Code, Codex, and AI coding agents."
+  },
   "plugins": [
     {
       "name": "grill-all",
       "description": "Source-aware plan review for Claude Code, Codex, and AI coding agents.",
       "source": "./plugins/grill-all",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "zhjai"
       },

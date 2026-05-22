@@ -1,6 +1,6 @@
 {
   "name": "grill-all",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Source-aware plan review for Claude Code, Codex, and AI coding agents.",
   "author": {
     "name": "zhjai"
